@@ -46,6 +46,31 @@
             padding-bottom: 20px;
         }
 
+        .profile-hero-image {
+            width: 100%;        /* コンテナ幅に合わせる */
+            max-width: 390px;   /* 趣味画像(最大260px)の約1.5倍 */
+            height: auto;       /* 縦横比を維持 */
+            border-radius: 0;
+            object-fit: contain;
+            box-shadow: 0 14px 32px rgba(56, 142, 60, 0.55);
+            border: 3px solid #c8e6c9;
+            background-color: #e8f5e9;
+        }
+
+        .profile-section {
+            display: flex;
+            align-items: flex-start;
+            gap: 24px;
+        }
+
+        .profile-text-wrapper {
+            flex: 1;
+        }
+
+        .profile-image-wrapper {
+            flex-shrink: 0;
+        }
+
         .intro-section {
             background: linear-gradient(135deg, #f1f8e9 0%, #ffffff 60%, #e8f5e9 100%);
             border-left: 5px solid #66bb6a;
@@ -122,6 +147,21 @@
             color: #33691e;
         }
 
+        .hobby-image-wrapper {
+            margin-top: 10px;
+        }
+
+        .hobby-image {
+            width: 100%;
+            max-width: 260px;
+            height: 160px;
+            border-radius: 12px;
+            object-fit: cover;
+            box-shadow: 0 6px 14px rgba(129, 199, 132, 0.5);
+            border: 1px solid #c8e6c9;
+            display: block;
+        }
+
         @media (max-width: 600px) {
             .container {
                 padding: 20px;
@@ -147,7 +187,8 @@
     <div class="container">
         <h1>中尾先生のポートフォリオ</h1>
         
-        <section class="intro-section">
+        <section class="intro-section profile-section">
+            <div class="profile-text-wrapper">
             <h2>プロフィール</h2>
             <div class="info-item">
                 <span class="info-label">お名前：</span>
@@ -160,6 +201,10 @@
             <div class="info-item">
                 <span class="info-label">担当教科：</span>
                 <span class="info-value">社会科</span>
+            </div>
+            </div>
+            <div class="profile-image-wrapper">
+                <img src="profile.png" alt="中尾和博のプロフィール画像" class="profile-hero-image">
             </div>
         </section>
 
@@ -191,14 +236,23 @@
                 <li class="hobby-item">
                     <div class="hobby-item-title">1．読書</div>
                     <div class="hobby-item-desc">例：歴史関係や実用書を中心に読み、授業づくりの視点を深めています。ただ、最近は仕事に全く関係のない本を読みたいと思っています。</div>
+                    <div class="hobby-image-wrapper">
+                        <img src="book.JPG" alt="読書のイメージ写真" class="hobby-image">
+                    </div>
                 </li>
                 <li class="hobby-item">
                     <div class="hobby-item-title">2．映画鑑賞</div>
                     <div class="hobby-item-desc">例：完全に娯楽としたいので、難しい映画はあまり観ないようにしています。</div>
+                    <div class="hobby-image-wrapper">
+                        <img src="movie.jpg" alt="映画鑑賞のイメージ写真" class="hobby-image">
+                    </div>
                 </li>
                 <li class="hobby-item">
                     <div class="hobby-item-title">3．AIいぢり</div>
                     <div class="hobby-item-desc">例：教材づくりや業務効率化に役立つ使い方を試しています。</div>
+                    <div class="hobby-image-wrapper">
+                        <img src="AI.JPG" alt="AIいぢりのイメージ写真" class="hobby-image">
+                    </div>
                 </li>
             </ul>
         </section>

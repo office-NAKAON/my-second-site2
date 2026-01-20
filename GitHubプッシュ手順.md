@@ -10,6 +10,20 @@
 - `index.html` - ポートフォリオサイト（中尾和博先生の自己紹介）
 - `README.md` - プロジェクト説明
 
+## 追記（今回のやり取りで確認したポイント）
+- PowerShellでは `cd /d` ではなく `Set-Location -Path "C:\Users\user\Desktop\Day1-2"` を使用する。
+- ユーザー名・メールが未設定だとコミットできない。リポジトリ単位で設定する例:
+  - `git config user.name "kazuhiro nakao"`
+  - `git config user.email "kazu19721222@gmail.com"`
+- ステータス確認はシンプルに `git status` でOK（`-s`オプションでエラーになる場合があるため）。
+- 今回のコミット＆プッシュ例:
+  ```powershell
+  Set-Location -Path "C:\Users\user\Desktop\Day1-2"
+  git add index.html
+  git commit -m "Update portfolio design with green summer field theme"
+  git push
+  ```
+
 ## プッシュ方法
 
 ### 方法1: Gitコマンドラインを使用（推奨）
