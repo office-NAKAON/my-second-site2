@@ -13,44 +13,53 @@
 
         body {
             font-family: 'Segoe UI', 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif;
-            background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+            background:
+                radial-gradient(circle at top left, rgba(255, 255, 255, 0.6) 0, rgba(255, 255, 255, 0) 40%),
+                linear-gradient(135deg, #a5d6a7 0%, #66bb6a 40%, #43a047 70%, #c5e1a5 100%);
             min-height: 100vh;
             padding: 20px;
-            line-height: 1.6;
+            line-height: 1.7;
+            color: #1b3b20;
         }
 
         .container {
-            max-width: 800px;
+            max-width: 900px;
             margin: 0 auto;
-            background: rgba(255, 255, 255, 0.9);
-            border-radius: 20px;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-            padding: 40px;
+            background: rgba(255, 255, 255, 0.96);
+            border-radius: 18px;
+            box-shadow:
+                0 18px 40px rgba(56, 142, 60, 0.35),
+                0 0 0 1px rgba(200, 230, 201, 0.9);
+            padding: 48px;
             margin-top: 40px;
         }
 
         h1 {
-            color: #1976d2;
+            color: #1b5e20;
             text-align: center;
             margin-bottom: 40px;
-            font-size: 2.5em;
-            font-weight: 600;
-            border-bottom: 3px solid #64b5f6;
+            font-size: 2.6em;
+            font-weight: 700;
+            letter-spacing: 0.05em;
+            text-shadow: 0 2px 6px rgba(200, 230, 201, 0.8);
+            border-bottom: 3px solid #66bb6a;
             padding-bottom: 20px;
         }
 
         .intro-section {
-            background: #f5f9ff;
-            border-left: 5px solid #2196f3;
-            padding: 30px;
-            border-radius: 10px;
-            margin-bottom: 30px;
+            background: linear-gradient(135deg, #f1f8e9 0%, #ffffff 60%, #e8f5e9 100%);
+            border-left: 5px solid #66bb6a;
+            padding: 28px 30px;
+            border-radius: 16px;
+            margin-bottom: 28px;
+            box-shadow: 0 10px 24px rgba(76, 175, 80, 0.18);
         }
 
         .intro-section h2 {
-            color: #1565c0;
-            margin-bottom: 20px;
-            font-size: 1.8em;
+            color: #2e7d32;
+            margin-bottom: 18px;
+            font-size: 1.9em;
+            letter-spacing: 0.03em;
         }
 
         .info-item {
@@ -59,15 +68,15 @@
         }
 
         .info-label {
-            font-weight: bold;
-            color: #1976d2;
+            font-weight: 600;
+            color: #2e7d32;
             display: inline-block;
             min-width: 120px;
             margin-right: 10px;
         }
 
         .info-value {
-            color: #424242;
+            color: #1b3b20;
             font-size: 1.1em;
         }
 
@@ -79,12 +88,38 @@
         }
 
         .hobby-tag {
-            background: #64b5f6;
-            color: white;
+            background: linear-gradient(135deg, #66bb6a 0%, #43a047 100%);
+            color: #f1f8e9;
             padding: 8px 16px;
-            border-radius: 20px;
+            border-radius: 999px;
             font-size: 0.95em;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 3px 8px rgba(56, 142, 60, 0.4);
+            border: 1px solid rgba(46, 125, 50, 0.7);
+        }
+
+        .hobby-list {
+            list-style: none;
+            margin-top: 10px;
+        }
+
+        .hobby-item {
+            background: linear-gradient(135deg, #ffffff 0%, #f1f8e9 100%);
+            border: 1px solid #c8e6c9;
+            border-radius: 14px;
+            padding: 18px 18px 16px;
+            margin-bottom: 14px;
+            box-shadow: 0 8px 18px rgba(129, 199, 132, 0.35);
+        }
+
+        .hobby-item-title {
+            color: #2e7d32;
+            font-weight: 700;
+            margin-bottom: 6px;
+            font-size: 1.1em;
+        }
+
+        .hobby-item-desc {
+            color: #33691e;
         }
 
         @media (max-width: 600px) {
@@ -113,23 +148,59 @@
         <h1>中尾先生のポートフォリオ</h1>
         
         <section class="intro-section">
-            <h2>自己紹介</h2>
+            <h2>プロフィール</h2>
             <div class="info-item">
                 <span class="info-label">お名前：</span>
                 <span class="info-value">中尾和博</span>
             </div>
             <div class="info-item">
+                <span class="info-label">職業：</span>
+                <span class="info-value">公立中学校教師</span>
+            </div>
+            <div class="info-item">
                 <span class="info-label">担当教科：</span>
                 <span class="info-value">社会科</span>
             </div>
-            <div class="info-item">
-                <span class="info-label">趣味：</span>
-                <div class="hobbies">
-                    <span class="hobby-tag">読書</span>
-                    <span class="hobby-tag">映画鑑賞</span>
-                    <span class="hobby-tag">AIいぢり</span>
-                </div>
-            </div>
+        </section>
+
+        <section class="intro-section">
+            <h2>もっと詳しい自己紹介</h2>
+            <ul class="hobby-list">
+                <li class="hobby-item">
+                    <div class="hobby-item-title">1．ロイロ認定ティーチャー、シンキングツール・アドバイザーNEXT</div>
+                    <div class="hobby-item-desc">例：ICTや思考ツールを授業づくりに活かす取り組みを行っています。</div>
+                </li>
+                <li class="hobby-item">
+                    <div class="hobby-item-title">2．Apple Teacher🍎</div>
+                    <div class="hobby-item-desc">例：授業や校務での活用例を磨いています。</div>
+                </li>
+                <li class="hobby-item">
+                    <div class="hobby-item-title">3．日本バスケットボール協会公認C級コーチ、C級審判員</div>
+                    <div class="hobby-item-desc">例：部活動や地域での指導・審判に取り組んでいます。</div>
+                </li>
+                <li class="hobby-item">
+                    <div class="hobby-item-title">4．キネシオテーピング協会公認トレーナー(CKKT)</div>
+                    <div class="hobby-item-desc">例：コンディショニングの基礎を学び、現場で活かしています。</div>
+                </li>
+            </ul>
+        </section>
+
+        <section class="intro-section">
+            <h2>趣味</h2>
+            <ul class="hobby-list">
+                <li class="hobby-item">
+                    <div class="hobby-item-title">1．読書</div>
+                    <div class="hobby-item-desc">例：歴史関係や実用書を中心に読み、授業づくりの視点を深めています。ただ、最近は仕事に全く関係のない本を読みたいと思っています。</div>
+                </li>
+                <li class="hobby-item">
+                    <div class="hobby-item-title">2．映画鑑賞</div>
+                    <div class="hobby-item-desc">例：完全に娯楽としたいので、難しい映画はあまり観ないようにしています。</div>
+                </li>
+                <li class="hobby-item">
+                    <div class="hobby-item-title">3．AIいぢり</div>
+                    <div class="hobby-item-desc">例：教材づくりや業務効率化に役立つ使い方を試しています。</div>
+                </li>
+            </ul>
         </section>
     </div>
 </body>
