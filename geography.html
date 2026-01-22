@@ -95,6 +95,34 @@
             margin-bottom: 15px;
         }
 
+        .pdf-link {
+            display: inline-block;
+            margin-left: 15px;
+            color: #2e7d32;
+            text-decoration: none;
+            font-size: 0.9em;
+            padding: 4px 12px;
+            background: rgba(200, 230, 201, 0.3);
+            border-radius: 4px;
+            border: 1px solid #66bb6a;
+            transition: all 0.3s;
+        }
+
+        .pdf-link:hover {
+            background: rgba(200, 230, 201, 0.6);
+            transform: translateY(-2px);
+            box-shadow: 0 2px 6px rgba(76, 175, 80, 0.3);
+        }
+
+        .pdf-link::before {
+            content: "📄 ";
+        }
+
+        .highlight {
+            color: #d32f2f;
+            font-weight: 700;
+        }
+
         @media (max-width: 600px) {
             .container {
                 padding: 20px;
@@ -118,6 +146,9 @@
         <section class="detail-section">
             <h2>詳細情報</h2>
             <div class="detail-content">
+                <p>1．<span class="highlight">刮目!!</span> 「創造性と批判的思考」を育む南アメリカの授業<a href="pdfs/geography1.pdf" class="pdf-link" target="_blank">PDFを見る</a></p>
+                <p>2．OPPシートを用いたヨーロッパ州の授業<a href="pdfs/geography2.pdf" class="pdf-link" target="_blank">PDFを見る</a></p>
+                <p>3．生成AIと壁打ちさせて、作文する授業 ～アフリカ州編～<a href="pdfs/geography3.pdf" class="pdf-link" target="_blank">PDFを見る</a></p>
             </div>
         </section>
 

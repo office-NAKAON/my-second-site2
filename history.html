@@ -95,6 +95,29 @@
             margin-bottom: 15px;
         }
 
+        .pdf-link {
+            display: inline-block;
+            margin-left: 15px;
+            color: #2e7d32;
+            text-decoration: none;
+            font-size: 0.9em;
+            padding: 4px 12px;
+            background: rgba(200, 230, 201, 0.3);
+            border-radius: 4px;
+            border: 1px solid #66bb6a;
+            transition: all 0.3s;
+        }
+
+        .pdf-link:hover {
+            background: rgba(200, 230, 201, 0.6);
+            transform: translateY(-2px);
+            box-shadow: 0 2px 6px rgba(76, 175, 80, 0.3);
+        }
+
+        .pdf-link::before {
+            content: "📄 ";
+        }
+
         @media (max-width: 600px) {
             .container {
                 padding: 20px;
@@ -118,6 +141,12 @@
         <section class="detail-section">
             <h2>詳細情報</h2>
             <div class="detail-content">
+                <p>1．「奈良時代の磯野家は、どのくらい税を納めたか？」<a href="pdfs/practice1.pdf" class="pdf-link" target="_blank">PDFを見る</a></p>
+                <p>2．生成AIと壁打ちさせて作文する授業 ～中世編～<a href="pdfs/practice2.pdf" class="pdf-link" target="_blank">PDFを見る</a></p>
+                <p>3．「時代を変えたのは誰か？」<a href="pdfs/practice3.pdf" class="pdf-link" target="_blank">PDFを見る</a></p>
+                <p>4．「明治維新は人々を幸せにしたか？」<a href="pdfs/practice4.pdf" class="pdf-link" target="_blank">PDFを見る</a></p>
+                <p>5．「日本はロシアと戦うべきだったか？」<a href="pdfs/practice5.pdf" class="pdf-link" target="_blank">PDFを見る</a></p>
+                <p>6．「日本の戦後はこれでよかったのか？」<a href="pdfs/practice6.pdf" class="pdf-link" target="_blank">PDFを見る</a></p>
             </div>
         </section>
 
