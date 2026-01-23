@@ -37,7 +37,7 @@
         h1 {
             color: #1b5e20;
             text-align: center;
-            margin-bottom: 40px;
+            margin-bottom: 30px;
             font-size: 2.6em;
             font-weight: 700;
             letter-spacing: 0.05em;
@@ -47,28 +47,32 @@
         }
 
         .profile-hero-image {
-            width: 100%;        /* コンテナ幅に合わせる */
-            max-width: 390px;   /* 趣味画像(最大260px)の約1.5倍 */
-            height: auto;       /* 縦横比を維持 */
+            width: 100%;
+            max-width: 600px;
+            height: auto;
             border-radius: 0;
             object-fit: contain;
             box-shadow: 0 14px 32px rgba(56, 142, 60, 0.55);
             border: 3px solid #c8e6c9;
             background-color: #e8f5e9;
+            display: block;
+            margin: 0 auto 30px auto;
         }
 
         .profile-section {
-            display: flex;
-            align-items: flex-start;
-            gap: 24px;
+            display: block;
         }
 
         .profile-text-wrapper {
-            flex: 1;
+            width: 100%;
         }
 
-        .profile-image-wrapper {
-            flex-shrink: 0;
+        .profile-info-line {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 0;
         }
 
         .intro-section {
@@ -88,21 +92,22 @@
         }
 
         .info-item {
-            margin-bottom: 15px;
-            padding: 10px 0;
+            margin-bottom: 0;
+            padding: 0;
+            display: inline-block;
         }
 
         .info-label {
             font-weight: 600;
             color: #2e7d32;
             display: inline-block;
-            min-width: 120px;
-            margin-right: 10px;
+            margin-right: 5px;
         }
 
         .info-value {
             color: #1b3b20;
             font-size: 1.1em;
+            margin-right: 20px;
         }
 
         .hobbies {
@@ -186,9 +191,19 @@
                 padding: 20px;
             }
 
-            .info-label {
+            .profile-info-line {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 10px;
+            }
+
+            .info-item {
                 display: block;
                 margin-bottom: 5px;
+            }
+
+            .info-value {
+                margin-right: 0;
             }
         }
     </style>
@@ -197,24 +212,25 @@
     <div class="container">
         <h1>中尾先生のポートフォリオ</h1>
         
+        <img src="profile.png" alt="中尾和博のプロフィール画像" class="profile-hero-image">
+        
         <section class="intro-section profile-section">
             <div class="profile-text-wrapper">
             <h2>プロフィール</h2>
-            <div class="info-item">
-                <span class="info-label">お名前：</span>
-                <span class="info-value">中尾和博</span>
+            <div class="profile-info-line">
+                <div class="info-item">
+                    <span class="info-label">お名前：</span>
+                    <span class="info-value">中尾和博</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">職業：</span>
+                    <span class="info-value">公立中学校教師</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">担当教科：</span>
+                    <span class="info-value">社会科</span>
+                </div>
             </div>
-            <div class="info-item">
-                <span class="info-label">職業：</span>
-                <span class="info-value">公立中学校教師</span>
-            </div>
-            <div class="info-item">
-                <span class="info-label">担当教科：</span>
-                <span class="info-value">社会科</span>
-            </div>
-            </div>
-            <div class="profile-image-wrapper">
-                <img src="profile.png" alt="中尾和博のプロフィール画像" class="profile-hero-image">
             </div>
         </section>
 
