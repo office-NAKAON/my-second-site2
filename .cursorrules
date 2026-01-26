@@ -1,0 +1,41 @@
+# Cursor Rules for Day1-2 Project
+
+## 自動コミット&プッシュ機能
+
+ユーザーが「コマンド&プッシュしてください」「コミット&プッシュしてください」「コミットしてプッシュしてください」などの類似の指示をした場合、以下の手順を自動的に実行する：
+
+1. 変更されたファイルを確認（`git status`）
+2. すべての変更をステージング（`git add .`）
+3. コミットメッセージを生成（変更内容に基づいて適切なメッセージを作成）
+4. コミット実行（`git commit -m "メッセージ"`）
+5. プッシュ実行（自動接続切り替え機能付き）:
+   - まずSSH接続で `git push` を試行
+   - SSH接続が失敗した場合（エラーメッセージに "Could not read from remote repository" や "Permission denied" などが含まれる場合）:
+     - 自動的にHTTPS接続に切り替え: `git remote set-url --push origin https://github.com/office-NAKAON/my-second-site2.git`
+     - プロキシ設定を無効化: `git config --local http.proxy ""` と `git config --local https.proxy ""`
+     - 再度 `git push` を実行
+   - プッシュ成功後、次回のためにSSH接続に戻す: `git remote set-url --push origin git@github.com:office-NAKAON/my-second-site2.git`
+
+### コミットメッセージの生成ルール
+- 変更されたファイル名と変更内容を確認
+- 日本語で簡潔で分かりやすいメッセージを作成
+- 例：「detail1.htmlのh1タイトルを改行で2行に分割」「index.htmlのスタイルを更新」など
+
+### 注意事項
+- コミット前に必ず変更内容を確認する
+- コミットメッセージは変更内容を正確に反映する
+- プッシュ時は自動的にネットワーク環境を検出し、SSH接続とHTTPS接続を自動切り替え
+- エラーが発生した場合は、エラーメッセージをユーザーに報告する
+
+## プロジェクト設定
+
+### Git設定
+- リポジトリ: `c:\Users\user\Desktop\Day1-2`
+- リモートURL（fetch）: `git@github.com:office-NAKAON/my-second-site2.git`
+- リモートURL（push）: `git@github.com:office-NAKAON/my-second-site2.git`（デフォルト：SSH接続、自動切り替え対応）
+- ブランチ: `main`
+- **自動切り替え機能**: プッシュ時にSSH接続が失敗した場合、自動的にHTTPS接続に切り替えて再試行します
+
+### ユーザー情報
+- ユーザー名: `kazuhiro nakao`
+- メール: `kazu19721222@gmail.com`
