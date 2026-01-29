@@ -13,7 +13,13 @@
    - SSH接続が失敗した場合（エラーメッセージに "Could not read from remote repository" や "Permission denied" などが含まれる場合）:
      - 自動的にHTTPS接続に切り替え: `git remote set-url --push origin https://github.com/office-NAKAON/my-second-site2.git`
      - プロキシ設定を無効化: `git config --local http.proxy ""` と `git config --local https.proxy ""`
-     - 再度 `git push` を実行
+     - 環境変数のプロキシ設定も無効化: `$env:HTTP_PROXY = $null; $env:HTTPS_PROXY = $null; $env:http_proxy = $null; $env:https_proxy = $null`
+     - Git Credential Managerを設定: `git config --local credential.helper manager`
+     - プロキシを無効化した状態で再度 `git push` を実行: `git -c http.proxy= -c https.proxy= push`
+   - 認証エラー（SEC_E_NO_CREDENTIALS）が発生した場合:
+     - 認証情報はWindows Credential Managerに保存されているはずなので、次回以降は自動的に使用される
+     - 初回のみ、コマンドプロンプトから `git push` を実行して認証情報を入力する必要がある可能性がある
+     - ただし、既に認証情報が保存されている場合は、PowerShellからでも自動的に使用される
    - プッシュ成功後、次回のためにSSH接続に戻す: `git remote set-url --push origin git@github.com:office-NAKAON/my-second-site2.git`
 
 ### コミットメッセージの生成ルール
@@ -23,8 +29,11 @@
 
 ### 注意事項
 - コミット前に必ず変更内容を確認する
-- コミットメッセージは変更内容を正確に反映する
+- コミットメッセージは変更内容を正確に反映する（PowerShellで日本語が問題になる場合は英語メッセージを使用）
 - プッシュ時は自動的にネットワーク環境を検出し、SSH接続とHTTPS接続を自動切り替え
+- Git Credential Managerを使用して認証情報を自動管理
+- 認証情報が既にWindows Credential Managerに保存されている場合は、PowerShellからでも自動的に使用される
+- 初回のみ認証が必要な場合があるが、一度保存されれば次回以降は自動的に使用される
 - エラーが発生した場合は、エラーメッセージをユーザーに報告する
 
 ## プロジェクト設定
